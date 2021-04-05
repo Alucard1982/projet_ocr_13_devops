@@ -26,8 +26,8 @@ jobs:
           command: |
             sudo curl https://cli-assets.heroku.com/install.sh | sh
             HEROKU_API_KEY=${f9fb539d-72ab-4659-95cd-1cd43d011500} heroku container:login
-            HEROKU_API_KEY=${f9fb539d-72ab-4659-95cd-1cd43d011500} heroku container:push -a python-django-starter web
-            HEROKU_API_KEY=${f9fb539d-72ab-4659-95cd-1cd43d011500} heroku container:release -a python-django-starter web
+            HEROKU_API_KEY=${f9fb539d-72ab-4659-95cd-1cd43d011500} heroku container:push -a oc-lettings-1
+            HEROKU_API_KEY=${f9fb539d-72ab-4659-95cd-1cd43d011500} heroku container:release -a oc-lettings-1
 
 workflows:
   main:
