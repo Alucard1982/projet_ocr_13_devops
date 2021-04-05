@@ -3,15 +3,14 @@ orbs:
   python: circleci/python@0.2.1
 jobs:
   build-and-test:
-    docker:
-      - image: circleci/python:3.8
+    executor: python/default
     steps:
       - checkout
       - python/load-cache
       - python/install-deps
       - python/save-cache
       - run:
-          name: Test
+          name: Test with pytest
           command: pytest
 workflows:
   main:
