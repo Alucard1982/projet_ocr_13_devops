@@ -22,6 +22,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: "echo environment variables from org-global context"
+          command: echo $HEROKU_TOKEN
+      - run:
           name: Build and push Docker image to Heroku
           command: |
             sudo curl https://cli-assets.heroku.com/install.sh | sh
