@@ -3,6 +3,10 @@ FROM python:3.8
 #créer un répertoire pour le projet
 WORKDIR /app
 
+ENV PYTHONUNBUFFERED=1 \
+    DEBUG=False \
+    PORT=8000
+
 ADD . /app
 
 #récup les dépendances

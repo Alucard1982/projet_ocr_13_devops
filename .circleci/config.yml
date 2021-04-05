@@ -25,9 +25,9 @@ jobs:
           name: Build and push Docker image to Heroku
           command: |
             sudo curl https://cli-assets.heroku.com/install.sh | sh
-            HEROKU_API_KEY=${f9fb539d-72ab-4659-95cd-1cd43d011500} heroku container:login
-            HEROKU_API_KEY=${f9fb539d-72ab-4659-95cd-1cd43d011500} heroku container:push -a oc-lettings-1
-            HEROKU_API_KEY=${f9fb539d-72ab-4659-95cd-1cd43d011500} heroku container:release -a oc-lettings-1
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a oc-lettings-1 web
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release -a oc-lettings-1 web
 
 workflows:
   main:
@@ -36,6 +36,8 @@ workflows:
       - deploy-dev:
           requires:
             - build-and-test
+          context:
+            -projet13
           filters:
             branches:
               only: master
