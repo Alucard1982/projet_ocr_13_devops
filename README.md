@@ -43,8 +43,8 @@ Passer les Variables d'environnemnt au context projet13 :
 2. DEBUG: False
 3. SECRET_KEY: de votre projet django(vous pouvez en générer,
  regarder sur le net si besoin comment générer un secret key django)
-. Il reste plus qu'à commit sur la branche master de votre projet pour lancer  les tests et le deploiement via circleci.
-. Pour voir le deploiement rendez sur votre app heroku dans settings pour récuperer l'adresse web.
+4. Il reste plus qu'à commit sur la branche master de votre projet pour lancer  les tests et le deploiement via circleci.
+5. Pour voir le deploiement rendez sur votre app heroku dans settings pour récuperer l'adresse web.
 
 - Docker
 
@@ -58,9 +58,8 @@ Un conteneur est crée  automatiquement pour le deploiement grace au fichier Doc
 Sentry à été ajouter au projet pour la correction de bug
 1. Aller sur le site web sentry: https://sentry.io/ créer une app avec django et récuperait votre dsn
 2. Passer votre dsn à l' application local:set DSN= votre dsn 
-Si vous voulez passer sentry au projet déployé:
-1. Passer la varibale d'environnement DSN à circleCI ou  setter directement à heroku la variable d'env:
-heroku config:set DSN=votre dsn 
+3. Passer votre dsn à l'application déployé: heroku config:set DSN=votre dsn 
+
 
 
 Fabriqué avec:
