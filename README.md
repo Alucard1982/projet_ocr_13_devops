@@ -32,11 +32,11 @@ Taper : pytest -vvv à la racine du projet
 - Déploiement
 
 Configuration requise : CirclCI , Heroku
-. Installer les CLI d'heroku.
-. Aller sur Heroku: https://dashboard.heroku.com/apps et créer une app.
-. Lier votre repo github du projet à CircleCI sur leur site web à cette adresse:https://app.circleci.com
-. Selectionner le projet et demarrer un build deja existant grace au fichier config.yml dans le dossier .circleci
-. Une fois fait aller dans l'onglet  organisation settings de votre projet dans circle ci 
+1. Installer les CLI d'heroku.
+2. Aller sur Heroku: https://dashboard.heroku.com/apps et créer une app.
+3. Lier votre repo github du projet à CircleCI sur leur site web à cette adresse:https://app.circleci.com
+4. Selectionner le projet et demarrer un build deja existant grace au fichier config.yml dans le dossier .circleci
+5. Une fois fait aller dans l'onglet  organisation settings de votre projet dans circle ci 
  et crée un context appelé: projet13
 Passer les Variables d'environnemnt au context projet13 :
 1. HEROKU_TOKEN(pour obtenir le token: heroku authorizations:create dans votre terminal)
@@ -49,17 +49,17 @@ Passer les Variables d'environnemnt au context projet13 :
 - Docker
 
 Un conteneur est crée  automatiquement pour le deploiement grace au fichier Dockerfile.
-. Vous pouvez crée une image grace à la commande :docker build -t ImageName
-. Pour run l'image: docker run -d -p 8000:8000 ImageName
-. Rendez vous en local à l' adresse: 127.0.0.1:8000
+1. Vous pouvez crée une image grace à la commande :docker build -t ImageName
+2. Pour run l'image: docker run -d -p 8000:8000 ImageName
+3. Rendez vous en local à l' adresse: 127.0.0.1:8000
 
 - Sentry
 
 Sentry à été ajouter au projet pour la correction de bug
-. Aller sur le site web sentry: https://sentry.io/ créer une app avec django et récuperait votre dsn
-. Passer votre dsn à l' application local:set DSN= votre dsn 
- Si vous voulez passer sentry au projet déployé:
-. Passer la varibale d'environnement DSN à circleCI ou  setter directement à heroku la variable d'env:
+1. Aller sur le site web sentry: https://sentry.io/ créer une app avec django et récuperait votre dsn
+2. Passer votre dsn à l' application local:set DSN= votre dsn 
+Si vous voulez passer sentry au projet déployé:
+1. Passer la varibale d'environnement DSN à circleCI ou  setter directement à heroku la variable d'env:
 heroku config:set DSN=votre dsn 
 
 
