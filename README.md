@@ -43,6 +43,7 @@ Passer les Variables d'environnemnt au context projet13 :
 2. DEBUG: False
 3. SECRET_KEY: de votre projet django(vous pouvez en générer,
  regarder sur le net si besoin comment générer un secret key django)
+4.Pour les statics passer directement par les cli d'heroku dans votre términal un fois l'app deployé:heroku config:set DEBUG_COLLECTSTATIC=1
 4. Il reste plus qu'à commit sur la branche master de votre projet pour lancer  les tests et le deploiement via circleci.
 5. Pour voir le deploiement rendez sur votre app heroku dans settings pour récuperer l'adresse web.
 
